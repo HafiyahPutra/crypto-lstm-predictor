@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediksi Harga Crypto</title>
+</head>
+<body>
+    <h2>🔮 Prediksi Harga Crypto 7 Hari ke Depan</h2>
+
+    <form method="POST">
+        <label for="coin">Pilih Coin:</label>
+        <select name="coin">
+            {% for c in coins %}
+            <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="mode">Mode:</label>
+        <select name="mode">
+            <option value="live">Live</option>
+            <option value="static">Static</option>
+        </select>
+
+        <button type="submit">Prediksi</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Hasil Prediksi:</h3>
+        <p>{{ prediction }}</p>
+    {% endif %}
+
+    {% if chart %}
+        <img src="data:image/png;base64,{{ chart }}">
+    {% endif %}
+</body>
+</html>

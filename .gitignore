@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.env
+# Jangan ignore models/ karena ingin di-push
